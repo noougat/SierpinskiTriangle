@@ -2,17 +2,20 @@ int drag =0;
 public void setup()
 {
  size(500,500);
+ background(255);
 }
 public void draw()
 {
-sierpinski(0,500,500+drag);
+  background(255);
+sierpinski(mouseX-250,mouseY + 150,500+drag);
 }
-public void mouseDragged()//optional
+public void mouseMoved()//optional
 {
- drag = drag+1;
+ drag = drag+25;
 }
 public void sierpinski(int x, int y, int len) 
 {
+  //triangle(x,y,x+len/2,y-len,x+len,y);
   if(len <= 20)
   {
   triangle(x,y,x+len/2,y-len,x+len,y);
